@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const TEST_USERNAME = 'standard_user';
+const TEST_LOCKED_OUT_USERNAME = 'locked_out_user';
 const TEST_PASSWORD = 'secret_sauce';
 const TEST_PRODUCTS_URL = 'inventory.html';
 
@@ -24,5 +25,18 @@ test.describe('Login page', () => {
     await page.locator('[id="login-button"]').click();
     await expect(notificationError).toBeVisible();
     await expect(notificationError).toHaveText('Epic sadface: Username is required');
+  });
+
+  test('User should view a notification error when it is locked out', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('[id="user-name"]').fill(TEST_LOCKED_OUT_USERNAME);
+    await page.locator('[id="password"]').fill(TEST_PASSWORD);
+
+    const notificationError = page.locator('[data-test="error"]');
+
+    await expect(notificationError).toBeHidden();
+    await page.locator('[id="login-button"]').click();
+    await expect(notificationError).toBeVisible();
+    await expect(notificationError).toHaveText('Epic sadface: Sorry, this user has been locked out.');
   });
 });
