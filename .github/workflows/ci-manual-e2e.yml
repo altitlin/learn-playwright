@@ -5,7 +5,7 @@ on:
     inputs:
       baseUrl:
         description: 'Base URL for e2e'
-        required: false
+        required: true
         default: ''
 
 jobs:
