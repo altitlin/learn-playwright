@@ -1,14 +1,16 @@
 import { defineConfig, devices } from '@playwright/test';
 
+import { PLAYWRIGHT_TEST_DIR, DEFAULT_BASE_URL } from './constants';
+
 export default defineConfig({
-  testDir: './src/tests',
+  testDir: PLAYWRIGHT_TEST_DIR,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://www.saucedemo.com',
+    baseURL: process.env.BASE_URL ?? DEFAULT_BASE_URL,
     trace: 'on-first-retry',
   },
   projects: [

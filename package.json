@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:e2e": "npx playwright test",
-    "test:debug": "npx playwright test --debug",
+    "test:e2e": "npx playwright test -c ./playwright",
+    "test:debug": "npx playwright test -c ./playwright --debug",
     "report:show": "npx playwright show-report"
   },
   "keywords": [
