@@ -57,6 +57,6 @@ jobs:
             ✅ *Playwright E2E Tests Passed!* 🎉
 
             📦 Repository: `${{ github.repository }}`
-            🌿 Branch: `${{ github.event.pull_request.head.ref }}` → `${{ github.event.pull_request.base.ref }}`
+            🌿 Branch: `${{ github.ref_name }}`
             🔨 Commit: [${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
             ⚙️ Workflow: [${{ github.workflow }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
