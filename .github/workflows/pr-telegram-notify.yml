@@ -4,9 +4,6 @@ permissions:
   contents: read
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     types: [opened]
 
@@ -27,5 +24,5 @@ jobs:
 
             🔹 *Title:* ${{ github.event.pull_request.title }}
             👤 *Author:* @${{ github.event.pull_request.user.login }}
-            🌿 *Branch:* `${{ github.event.pull_request.head.ref }}` → `${{ github.event.pull_request.base.ref }}`
+            🌿 *Branch:* `${{ github.event.pull_request.head.ref }}` 👉 `${{ github.event.pull_request.base.ref }}`
             🔗 [View Pull Request](${{ github.event.pull_request.html_url }})

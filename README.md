@@ -81,5 +81,6 @@ To run tests in debug mode:
 ```
 
 ## 🔄 GitHub Actions Workflows
-- `.github/workflows/ci-e2e.yml` — runs E2E tests on every push or PR
-- `.github/workflows/ci-manual-e2e.yml` — triggers tests manually with a custom baseUrl
+- `.github/workflows/e2e-manual.yml` — triggers tests manually with a custom baseUrl
+- `.github/workflows/e2e.yml` — runs E2E tests on every push or PR
+- `.github/workflows/pr-telegram-notify.yml` - sends Telegram notification that PR opened
