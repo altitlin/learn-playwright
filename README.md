@@ -46,14 +46,9 @@ Before running the tests, make sure you have the following installed:
   npm run test:e2e
 ```
 
-### 🔹 Run a specific test
-```bash
-  npm run test:e2e src/tests/login.test.ts
-```
-
 ### 🔹 Run by tag
 ```bash
-  npm run test:e2e --grep @login
+  TAG=@login npm run test:tag
 ```
 
 ## 📊 Viewing Test Report
@@ -77,7 +72,7 @@ Example .env:
 ## 🐛 Debugging
 To run tests in debug mode:
 ```bash
-  npm run test:debug
+  GREP='something name of test or tag' npm run test:debug
 ```
 
 ## 🔄 GitHub Actions Workflows

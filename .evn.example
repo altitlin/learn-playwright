@@ -1,1 +1,4 @@
 BASE_URL=https://your-app.com
+USERNAME=username
+PASSWORD=pass
+LOCKED_OUT_USERNAME=locked_username
