@@ -1,2 +1,2 @@
-export const DEFAULT_BASE_URL = 'https://www.saucedemo.com';
-export const PLAYWRIGHT_TEST_DIR = '../src/tests';
+export const TEST_DIR_PATH = '../src/tests';
+export const ENV_FILE_PATH = '../.env';
