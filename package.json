@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:e2e": "npx playwright test -c ./playwright",
-    "test:debug": "npx playwright test -c ./playwright --debug",
+    "test:tag": "npx playwright test -c ./playwright --grep \"$TAG\"",
+    "test:debug": "npx playwright test -c ./playwright --debug --grep \"$GREP\"",
     "report:show": "npx playwright show-report"
   },
   "keywords": [
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@playwright/test": "1.53.1",
     "@types/node": "24.0.7",
+    "dotenv": "^17.0.1",
     "ts-node": "10.9.2",
     "typescript": "5.8.3"
   }
