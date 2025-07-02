@@ -44,4 +44,11 @@ export class LoginPage {
   async hasNotificationErrorText(text: string) {
     await expect(this.notificationError).toHaveText(text);
   }
+
+  async login(username: string, password: string) {
+    await this.goTo();
+    await this.fillUsername(username);
+    await this.fillPassword(password);
+    await this.clickOnLoginButton();
+  }
 }

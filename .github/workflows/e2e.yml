@@ -20,6 +20,12 @@ jobs:
       matrix:
         node-version: [23.x]
 
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      USERNAME: ${{ secrets.USERNAME }}
+      LOCKED_OUT_USERNAME: ${{ secrets.LOCKED_OUT_USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
