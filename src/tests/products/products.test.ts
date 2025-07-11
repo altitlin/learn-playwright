@@ -54,11 +54,12 @@ test.describe('Products page', { tag: PRODUCTS_PAGE_TAG }, () => {
     await productsPage.primaryHeader.expectCartEmpty();
   });
 
-  test('should navigate to product details when clicking on product title', async ({ productsPage, page }) => {
+  test('should navigate to product details when clicking on product title', async ({ productsPage, productDetailsPage }) => {
     const productCard = productsPage.productList.getProductCard(0);
-    const title = await productCard.getTitle() as string;
 
     await productCard.clickOnTitle();
-    // await expect(page.locator(SELECTORS.productCardTitle)).toHaveText(title);
+    await productDetailsPage.primaryHeader.expectVisible();
+    await productDetailsPage.productDetailsHeader.expectVisible();
+    await productDetailsPage.productCard.expectVisible();
   });
 });
