@@ -62,6 +62,9 @@ You can use a `.env` file to store test environment variables:
 Example .env:
 ```ini
   BASE_URL="https://your-app.com"
+  USERNAME=""
+  PASSWORD=""
+  LOCKED_OUT_USERNAME=""
 ```
 
 ```bash
